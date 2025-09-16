@@ -1,0 +1,56 @@
+{
+  "models": {
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "llm_model": "gpt-3.5-turbo",
+    "llm_temperature": 0.1,
+    "llm_max_tokens": 1000
+  },
+  "openai": {
+    "model": "gpt-3.5-turbo",
+    "temperature": 0.1,
+    "max_tokens": 1000,
+    "top_p": 1.0,
+    "frequency_penalty": 0.0,
+    "presence_penalty": 0.0,
+    "request_timeout": 60,
+    "max_retries": 3
+  },
+  "chunking": {
+    "chunk_size_tokens": 512,
+    "overlap_tokens": 64,
+    "respect_sentence_boundaries": true,
+    "min_chunk_size": 32
+  },
+  "retrieval": {
+    "top_k": 5,
+    "similarity_threshold": 0.2,
+    "include_metadata": true
+  },
+  "vector_store": {
+    "collection_name": "academic_documents",
+    "persist_directory": "data/chroma_db",
+    "distance_function": "cosine"
+  },
+  "processing": {
+    "batch_size": 32,
+    "use_gpu": false,
+    "memory_efficient": true
+  },
+  "output": {
+    "save_to_file": true,
+    "print_to_console": true,
+    "output_directory": "data/outputs",
+    "include_source_chunks": true,
+    "include_metadata": true
+  },
+  "logging": {
+    "level": "INFO",
+    "log_to_file": true,
+    "log_directory": "logs",
+    "max_log_size_mb": 10
+  },
+  "evaluation": {
+    "track_performance": true,
+    "track_token_usage": true
+  }
+}
